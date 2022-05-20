@@ -5,10 +5,14 @@ const Park = function(name, ticketPrice) {
 };
 
 
-// Park.prototype.addDinosaur = function(dinosaur) {
-//     this.dinosaurCollection.push(dinosaur)
-// };
+Park.prototype.addDinosaur = function(dinosaur) {
+    this.dinosaurCollection.push(dinosaur)
+};
 
+Park.prototype.removeDinosaur = function(dinosaur){
+    let removedDinosaur = this.dinosaurCollection.indexOf(dinosaur);
+    this.dinosaurCollection.splice(removedDinosaur, 1);
+};
 
 
 module.exports = Park;

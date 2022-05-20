@@ -17,11 +17,22 @@ describe("Park", function() {
     assert.deepStrictEqual(park.ticketPrice, 20);
   });
 
-  xit('should have a collection of dinosaurs');
+  it('should have a collection of dinosaurs', function(){
+    assert.deepStrictEqual(park.dinosaurCollection, []);
+  });
 
-  xit('should be able to add a dinosaur to its collection');
+  it('should be able to add a dinosaur to its collection', function(){
+    park.addDinosaur("Velociraptor");
+    park.addDinosaur("Ankylosaurus");
+    assert.deepStrictEqual(park.dinosaurCollection, ["Velociraptor", "Ankylosaurus"]);
+  });
 
-  xit('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function(){
+    park.addDinosaur("Velociraptor");
+    park.addDinosaur("Ankylosaurus");
+    park.removeDinosaur("Velociraptor");
+    assert.deepStrictEqual(park.dinosaurCollection, ["Ankylosaurus"]);
+  });
 
   xit('should be able to find the dinosaur that attracts the most visitors');
 
