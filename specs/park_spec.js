@@ -4,9 +4,15 @@ const Dinosaur = require('../models/dinosaur.js');
 
 describe("Park", function() {
   let park;
+  let dinosaur;
 
   beforeEach(function() {
     park = new Park("Jurassic World", 20);
+    dinosaur1 = new Dinosaur("Velociraptor", "carnivore", 150)
+    dinosaur2 = new Dinosaur("Stegosaurus", "Stegosaurus", 100)
+    dinosaur3 = new Dinosaur("Ankylosaurus", "herbivore", 120)
+    dinosaur4 = new Dinosaur("Triceratops", "herbivore", 80)
+    dinosaur4 = new Dinosaur("Oviraptor", "omnivore", 20)
   });
 
   it('should have a name', function() {
@@ -33,6 +39,14 @@ describe("Park", function() {
     park.removeDinosaur("Velociraptor");
     assert.deepStrictEqual(park.dinosaurCollection, ["Ankylosaurus"]);
   });
+
+
+// ADDED EXTRA TEST TO TEST GATHERING OF INFO
+  it('should have a name', function() {
+    assert.strictEqual(dinosaur1.species, "Velociraptor");
+  });
+
+
 
   xit('should be able to find the dinosaur that attracts the most visitors');
 

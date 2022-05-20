@@ -4,4 +4,8 @@ const Dinosaur = function (species, diet, guestsAttractedPerDay) {
   this.guestsAttractedPerDay = guestsAttractedPerDay;
 }
 
+Dinosaur.prototype.mostVisited = function(){
+
+};
+
 module.exports = Dinosaur;
